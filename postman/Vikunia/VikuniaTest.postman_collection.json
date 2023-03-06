@@ -1,0 +1,251 @@
+{
+	"info": {
+		"_postman_id": "bc30c23f-7ee9-4e80-953a-5a99214b2d4c",
+		"name": "VikuniaTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20303909"
+	},
+	"item": [
+		{
+			"name": "Label",
+			"item": [
+				{
+					"name": "Create a label",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IiIsImVtYWlsUmVtaW5kZXJzRW5hYmxlZCI6ZmFsc2UsImV4cCI6MTY3NzQyOTkxMSwiaWQiOjYsImlzTG9jYWxVc2VyIjp0cnVlLCJsb25nIjp0cnVlLCJuYW1lIjoiIiwidHlwZSI6MSwidXNlcm5hbWUiOiJhbnRvbiJ9.8mcd6OZvzaaqF6EawrdH_Zd6e_1qKxZBxLQXWS0UMVc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"created\": \"2023-01-27T17:44:56+01:00\",\r\n  \"created_by\": {\r\n    \"created\": \"2023-01-27T17:44:56+01:00\",\r\n    \"email\": \"aspirevx@gmail.com\",\r\n    \"id\": 6,\r\n    \"name\": \"\",\r\n    \"updated\": \"2023-01-27T17:44:56+01:00\",\r\n    \"username\": \"anton\"\r\n  },\r\n  \"description\": \"string\",\r\n  \"hex_color\": \"string\",\r\n  \"id\": 0,\r\n  \"title\": \"new_lable\",\r\n  \"updated\": \"2023-01-27T17:44:56+01:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/labels",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"labels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gets one label",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IiIsImVtYWlsUmVtaW5kZXJzRW5hYmxlZCI6ZmFsc2UsImV4cCI6MTY3NzQyOTkxMSwiaWQiOjYsImlzTG9jYWxVc2VyIjp0cnVlLCJsb25nIjp0cnVlLCJuYW1lIjoiIiwidHlwZSI6MSwidXNlcm5hbWUiOiJhbnRvbiJ9.8mcd6OZvzaaqF6EawrdH_Zd6e_1qKxZBxLQXWS0UMVc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/labels/{{label_id}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"labels",
+								"{{label_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"email\": \"aspirevx@gmail.com\",\r\n\"id\": 0,\r\n\"password\": \"12345\",\r\n\"username\": \"anton\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"long_token\": true,\r\n\"password\": \"12345\",\r\n\"username\": \"anton\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User info",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IiIsImVtYWlsUmVtaW5kZXJzRW5hYmxlZCI6ZmFsc2UsImV4cCI6MTY3NzQyOTkxMSwiaWQiOjYsImlzTG9jYWxVc2VyIjp0cnVlLCJsb25nIjp0cnVlLCJuYW1lIjoiIiwidHlwZSI6MSwidXNlcm5hbWUiOiJhbnRvbiJ9.8mcd6OZvzaaqF6EawrdH_Zd6e_1qKxZBxLQXWS0UMVc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/user",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change password",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IiIsImVtYWlsUmVtaW5kZXJzRW5hYmxlZCI6ZmFsc2UsImV4cCI6MTY3NzE3NzUwOCwiaWQiOjEyLCJpc0xvY2FsVXNlciI6dHJ1ZSwibG9uZyI6dHJ1ZSwibmFtZSI6IiIsInR5cGUiOjEsInVzZXJuYW1lIjoiYW50b24ifQ.aW2elvFztmnA2uTJB8hvet_lsaT--QF6mWW_MX6bm10",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"new_password\": \"123@123\",\r\n\"old_password\": \"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/password",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"password"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://try.vikunja.io/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "label_id",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
