@@ -1,0 +1,32 @@
+ID,Название (Title):,Описание                     (Summary):,Приоритет (Priority),Предусловия (Preconditions),Шаги (Steps):,Ожидаемый результат (Expected result):,Статус прохождения,Cсылка на дефект
+Позитивные тест-кейсы,,,,,,,,
+1,Создание заявки с заполнением обязательных полей,,High,"Тестовые данные для заявки:
+Тело запроса raw ->JSON (payload):
+{
+   ""sum"": 210000
+   ""revenue"": 50000
+   ""period"": 6
+   ""name"": ""Петров""
+   ""phone"": ""+7(951)455-56-57""
+   ""email"": null
+   ""msg"": null
+}
+или form-data:
+    sum: 210000
+    revenue: 50000
+    period: 6
+    name: Петров
+    phone: +7(951)455-56-57
+    email: 
+    msg:",Отправить POST запрос на создание заявки,"Запрос успешно отправлен методом POST.
+Заявка создана.
+Тело ответа в формате JSON имеет вид:
+{
+""sum"": 210000
+""revenue"": 50000
+""period"": 6
+""name"": ""Петров""
+""phone"": ""+7(951)455-56-57""
+""email"": null
+""msg"": null
+}",Failed,https://docs.google.com/spreadsheets/d/1y63GRF5cax6XDqg4NhLRZH_jLXn-74t1/edit#gid=1133688193&range=A46
